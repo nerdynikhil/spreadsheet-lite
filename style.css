@@ -51,7 +51,45 @@ body {
     cursor: pointer;
 }
 
-menu-bar-item.selected:hover {
+.menu-bar-item.selected:hover {
     background-color: #fff;
     cursor: default;
+}
+
+.menu-icon-bar {
+    display: flex;
+    flex-direction: row;
+    height: 6vh;
+}
+
+.menu-icon {
+    padding-left: 0.7rem;
+    padding-right: 0.7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.menu-icon:hover {
+    background-color: lightgrey;
+    cursor: pointer;
+}
+
+.menu-selector {
+    height: 5vh;
+    font-size: 1.2rem;
+    width: 10vw;
+    min-width: 130px;
+    font-family: Noto Sans;
+}
+
+#font-family {
+    width: 100vw;
+    min-width: 130px;
+}
+
+#font-size {
+    width: 4vw;
+    min-width: 55px;
 }
