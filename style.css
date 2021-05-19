@@ -164,22 +164,23 @@ body {
 
 #rows {
     width: 25px;
-    width: calc(76vh - 25px);
+    height: calc(76vh - 25px);
     border: 1px solid lightgray;
+    overflow: hidden;
 }
 
 #cells {
+    position: relative;
     width: calc(100vw - 25px);
     height: calc(76vh - 25px);
     border: 1px solid lightgray;
+    overflow: scroll;
 }
 
 .column-name {
     min-width: 100px;
     width: 100px;
     border-right: 1px solid lightgray;
-    border-left: 1px solid lightgray;
-    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
