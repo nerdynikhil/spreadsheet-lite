@@ -69,6 +69,30 @@ $(".input-cell").click(function (e) {
   selectCell(this, e, topCell, bottomCell, leftCell, rightCell);
 });
 
+function unselectCell(ele, e, topCell, bottomCell, leftCell, rightCell) {
+  if ($(ele).attr("contenteditable") == "false") {
+    if ($(ele).hasClass("top-selected")) {
+      topCell.removeClass("bottom-selected");
+    }
+
+    if ($(ele).hasClass("bottom-selected")) {
+      bottomCell.removeClass("top-selected");
+    }
+
+    if ($(ele).hasClass("left-selected")) {
+      leftCell.removeClass("right-selected");
+    }
+
+    if ($(ele).hasClass("right-selected")) {
+      rightCell.removeClass("left-selected");
+    }
+
+    $(ele).removeClass(
+      "selected top-selected bottom-selected left-selected right-selected"
+    );
+  }
+}
+
 function selectCell(ele, e, topCell, bottomCell, leftCell, rightCell) {
   if (e.ctrlKey) {
     // top selected or not
@@ -115,7 +139,9 @@ function selectCell(ele, e, topCell, bottomCell, leftCell, rightCell) {
       rightCell.addClass("left-selected");
     }
   } else {
-    $(".input-cell.selected").removeClass("selected");
+    $(".input-cell.selected").removeClass(
+      "selected top-selected bottom-selected left-selected right-selected"
+    );
   }
   $(ele).addClass("selected");
 }
